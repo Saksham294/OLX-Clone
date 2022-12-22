@@ -1,0 +1,16 @@
+.footerBody{
+    height: 4rem;
+    background-color: #082c34;
+    color: white;
+    display: flex;
+    font-size: 0.9rem;
+}
+.otherCountries{
+    margin-top: 1.25rem;
+    margin-left: 5rem;
+}
+
+.copyright{
+    margin-top: 1.25rem;
+    margin-left: 40rem;
+}

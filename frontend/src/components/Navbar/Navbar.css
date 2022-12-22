@@ -1,0 +1,56 @@
+*{
+margin: 0;
+    padding: 0;
+}
+.navMain{
+    background-color: #f0f4f4;
+    height: 4.5rem;
+    display: flex;
+}
+.nav{
+    display: flex;;
+}
+.nav>button{
+    background-color: #082c34;
+    border: #082c34;
+    border-radius: 10px;
+height: 3rem;
+padding-top: 0.3rem;
+
+    margin-top: 0.8rem;
+
+}
+
+img{
+    height: 1.75rem;
+margin-top: 1.5rem;
+margin-left: 5rem;
+}
+
+input[type=text]{
+    border: 2px solid #082c34;
+    box-sizing: border-box;
+    padding: 1vmax 2vmax;
+width: 200%;
+    border-radius: 10px;
+
+margin: 0.55vmax;
+margin-left: 8rem;
+    font: 100 1.2rem "Montserrat", sans-serif;
+    outline: none;
+}
+input[type=text]:focus{
+    border: 0;
+    outline: 2px solid #28e4dc;     /* oranges! yey */
+  }
+  .login{
+
+    display: inline-block;
+    margin-left: 36rem;
+    font:  1.5rem "Lato", sans-serif;
+    font-weight: 500;
+margin-top: 1.2rem;
+  }
+/*
+#082c34
+*/
