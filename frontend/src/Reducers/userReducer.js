@@ -19,15 +19,15 @@ export const userReducer=createReducer(initialState,{
         state.isAuthenticated=false
     },
 
-    registerRequest:(state)=>{
+    registerUserRequest:(state)=>{
         state.loading=true;
     },
-    registerSuccess:(state,action)=>{
+    registerUserSuccess:(state,action)=>{
         state.loading=false;
         state.user=action.payload;
         state.isAuthenticated=true
     },
-    registerFailure:(state,action)=>{
+    registerUserFailure:(state,action)=>{
         state.loading=false
         state.isAuthenticated=false
         state.error=action.payload;

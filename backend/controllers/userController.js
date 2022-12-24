@@ -1,5 +1,6 @@
 const User=require("../models/userModel")
 const Product=require("../models/productModel")
+const cloudinary=require("cloudinary")
 
 
 
@@ -80,6 +81,25 @@ exports.loginUser = async (req, res) => {
         message: error.message,
       });
     }
+}
+
+exports.logoutUser=async(req,res)=>{
+  try {
+      res.cookie("token", "none", {
+          expires: new Date(Date.now() + 10 * 1000),
+          httpOnly: true
+      });
+      res.status(200).json({
+          success:true,
+          message:"Logged out successfully"
+      })
+      
+  } catch (error) {
+      res.status(404).json({
+          success:false,
+          message:error.message
+      })
+  }
 }
 
 exports.getMyPostedItems=async(req,res)=>{

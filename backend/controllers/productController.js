@@ -1,5 +1,6 @@
 const Product=require("../models/productModel")
 const User=require("../models/userModel")
+const cloudinary=require("cloudinary")
 
 exports.postItem=async(req,res)=>{
     try {

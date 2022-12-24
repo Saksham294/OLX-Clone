@@ -1,0 +1,16 @@
+.itemsContainer{
+    display: flex;
+    flex-wrap: wrap;
+
+width: 1300px;
+
+    height: 100%;
+    margin-left: 5rem;
+
+}
+
+.homeHeading>h5{
+
+display: inline-block;
+margin-left: 5.5rem;
+}

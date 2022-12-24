@@ -1,0 +1,6 @@
+a:visited { 
+    text-decoration: none; color:inherit; 
+}
+a:hover{
+    color: rgb(162, 162, 255);
+}

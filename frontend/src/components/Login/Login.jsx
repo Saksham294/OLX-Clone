@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './Login.css'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import {Button, Grid,Link,Paper, Typography} from '@mui/material'
 import { TextField } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -36,6 +36,7 @@ const Login = () => {
       
 
     }
+    const {isAuthenticated}=useSelector(state=>state.user)
     return (
        
            <Grid>
