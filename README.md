@@ -29,6 +29,10 @@ Clone this project using the following commands
   git clone
   cd OLX-Clone
 ```
+To install the dependencies run
+```bash
+yarn
+```
 Start the server using 
 ```bash
    cd backend
