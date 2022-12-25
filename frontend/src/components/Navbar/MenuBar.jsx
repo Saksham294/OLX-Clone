@@ -27,7 +27,7 @@ const MenuBar = () => {
   if(user.avatar!=undefined){
        userImage=user.avatar.url;
   }
-  console.log(userImage)
+
   
     const dispatch=useDispatch();
     const [anchorEl, setAnchorEl] = React.useState(null);
