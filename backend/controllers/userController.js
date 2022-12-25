@@ -137,3 +137,24 @@ exports.getAllMyPurchases=async(req,res)=>{
           });
     }
 }
+
+exports.getMyProfile=async(req,res)=>{
+  try {
+    const user = await User.findById(req.user._id).populate(
+      "postedItems purchasedItems"
+    );
+
+
+
+    res.status(200).json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+}

@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 
-const productSchema= mongoose.Schema({
+const productSchema=new mongoose.Schema({
     title:{
         type:String,
         required:[true,"Please enter the title of the product"]
@@ -8,6 +8,10 @@ const productSchema= mongoose.Schema({
     imageUrl:{
         public_id:String,
         url:String,
+    },
+    location:{
+        type:String,
+        required:[true,"Please enter location"]
     },
     price:{
         type:Number,

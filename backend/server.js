@@ -11,6 +11,12 @@ app.use(cors());
 
 app.use(express.json())
 
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+  api_key:  process.env.API_KEY,
+  api_secret:   process.env.API_SECRET,
+})
+
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.MONGODB,{
     useNewUrlParser: true,

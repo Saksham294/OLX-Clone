@@ -1,16 +1,43 @@
 .itemsContainer{
     display: flex;
     flex-wrap: wrap;
-
-width: 1300px;
+margin-bottom: 3rem;
+width: 1400px;
 
     height: 100%;
     margin-left: 5rem;
 
+}
+.homeBg{
+    width: 100%;
+    margin-left: 0;
+    height: 100%;
+    margin-top: 1px;
 }
 
 .homeHeading>h5{
 
 display: inline-block;
 margin-left: 5.5rem;
+}
+@media screen and (max-width: 600px){
+    .homeBg{
+
+    }
+    .homeHeading{
+        margin-left: 0;
+        text-align: center;
+    }
+    .homeHeading>h5{
+        margin-left: 0;
+        font-size: 2rem;
+    }
+    .itemsContainer{
+        display: block;
+margin-left: 0;
+width: 100%;
+height: 100%;
+margin-left: 8rem;
+margin-top: 2rem;
+    }
 }

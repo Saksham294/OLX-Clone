@@ -1,0 +1,28 @@
+.itemsHeading{
+
+margin-left: 5.5rem;
+}
+.imgBg{
+    width: 250px;
+    height: 220px;
+    margin-top: 10rem;
+}
+.adBanner{
+    margin-left: 0;
+    width: 100%;
+    height: 500px;
+    margin-top: 1px;
+}
+
+@media screen and (max-width: 600px){
+    .adBanner{
+        height: 300px;
+    }
+    .mpi>h4{
+        text-align: center;
+margin-left: 0;
+    }
+    .imgBg{
+        display: none;
+    }
+}

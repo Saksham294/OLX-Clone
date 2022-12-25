@@ -5,7 +5,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import {useSelector,useDispatch} from 'react-redux'
 import { logoutUser } from '../../Actions/userActions';
-
+import {Button} from '@mui/material'
+import AddIcon from '@mui/icons-material/Add';
+import MenuBar from './MenuBar';
+import { IconButton } from '@mui/material';
 
 const Navbar = () => {
 
@@ -20,10 +23,12 @@ const Navbar = () => {
     }
 
     return (
-        <div className='navMain'>
-<Link to='/'><img src={logoUrl}></img></Link>
+        <div>
+          <div className='navMain'>
+<Link to='/'><img className='logoImg' src={logoUrl}></img></Link>
            <div className="nav">
            <input
+           className='searchBox'
           type="text"
           placeholder="Find Cars,Mobile Phones and More..."
           value={findUser}
@@ -31,13 +36,20 @@ const Navbar = () => {
           required
 
         />
-<button><SearchIcon sx={{color:"white",fontSize:"3rem"}}/></button>
+<IconButton sx={{width:"50px",height:"50px",marginTop:"10px",color:"white",backgroundColor:"#082c34"}}>
+  <SearchIcon/>
+</IconButton>
            </div>
-         <div className="login">
-       {isAuthenticated?<button onClick={logoutHandler}>  <p><u>Logout</u></p></button>:<Link to='/login'>  <p><u>Login</u></p></Link>}
-         </div>
 
+         {isAuthenticated?<MenuBar className='menuBar'/>: <div className="login"><Link className='link' to="/login" style={{ textDecoration: 'none' }}><Button variant='outlined' sx={{marginRight:"1rem"}}>Login</Button></Link></div>}
+
+        <div className="sellButton">
+          <Link to='/postItem'><Button className='sell' variant='contained' startIcon={<AddIcon/>} sx={{fontSize:"1rem",backgroundColor:"#FEBE10",':hover':{bgcolor: '#FEBE10', // theme.palette.primary.main
+      color: 'white',}}}>Sell</Button></Link>
+        </div>
            
+        </div>
+        <div className="bottomNav"></div>
         </div>
     )
 }

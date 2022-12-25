@@ -5,7 +5,7 @@ const dotenv=require("dotenv")
 
 dotenv.config()
 
-const userSchema=mongoose.Schema({
+const userSchema=new mongoose.Schema({
 
     name:{
         type:String,

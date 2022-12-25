@@ -1,4 +1,4 @@
-.footerBody{
+.footerBody2{
     height: 4rem;
     background-color: #082c34;
     color: white;
@@ -10,7 +10,83 @@
     margin-left: 5rem;
 }
 
+.icons{
+    margin-left: 1rem;
+}
+
 .copyright{
     margin-top: 1.25rem;
     margin-left: 40rem;
+}
+.footerBody1{
+    display: flex;
+    background-color: #f0f4f4;
+padding-bottom: 2rem;
+padding-top: 2rem;
+}
+.footerBody1>div{
+    /* border: 2px solid red; */
+    padding: 1rem;
+    margin-left: 5rem;
+    font-family: 'Lato';
+    font-weight: 500;
+    color: #082c34;
+
+}
+.footerBody1>div>h6{
+    font-weight: 510;
+}
+.footerBody1>div>ul{
+    text-decoration: none;
+    list-style: none;
+    margin-left: 0.1rem;
+    margin-top: 1rem;
+}
+.footerBody1>div>ul>li{
+    margin-top: 0.5rem;
+    font-size:0.8rem;
+}
+.footerBody1>div>ul>li:hover{
+    cursor: pointer;
+    color: #082c34;
+}
+
+.fbicon:hover{
+cursor: pointer;
+}
+
+.icons:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+    .footerBody1{
+width: 100%;
+margin-bottom: 0;
+display: block;
+    }
+    .footerBody1>div{
+text-align: center;
+        padding: 0rem;
+        margin-left: 0.5rem;
+    }
+    .footerBody2{
+
+display: block;
+width: 100%;
+display: block;
+height: 100%
+    }
+    .otherCountries{
+        text-align: center;
+        margin-left: 0;
+        
+    }
+    .copyright{
+        margin-left: 0;
+        text-align: center;
+    }
+    .followUs{
+        margin-top: 1rem;
+    }
 }

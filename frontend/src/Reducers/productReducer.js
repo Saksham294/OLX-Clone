@@ -56,5 +56,18 @@ export const productOperationsReducer=createReducer(initialState,{
         state.error = action.payload;
       },
 
+  
+      getItemRequest:(state, action) => {
+        state.loading = true;
+
+      },
+      getItemSuccess:(state, action) => {
+        state.loading = false;
+        state.item = action.payload;
+      },
+      getItemFailure:(state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      },
       
 })

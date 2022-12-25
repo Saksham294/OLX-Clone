@@ -9,7 +9,7 @@ const store=configureStore(
 
         reducer:{
             user:userReducer,
-            allUsoldProducts:allProductsReducer,
+            allUnsoldProducts:allProductsReducer,
             productOperations:productOperationsReducer,
         }
     })

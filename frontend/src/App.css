@@ -2,5 +2,10 @@ a:visited {
     text-decoration: none; color:inherit; 
 }
 a:hover{
-    color: rgb(162, 162, 255);
+    cursor: pointer;
+    color: #102c34
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }

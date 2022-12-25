@@ -73,3 +73,23 @@ export const logoutUser=()=>async(dispatch)=>{
         });
       }
 }
+
+export const getMyProfile=()=>async(dispatch)=>{
+  try {
+    dispatch({
+      type: "loadUserRequest",
+    });
+
+    const { data } = await axios.get("/api/me");
+
+    dispatch({
+      type: "loadUserSuccess",
+      payload: data.user,
+    });
+  } catch (error) {
+    dispatch({
+      type: "loadUserFailure",
+      payload: error.response.data.message,
+    });
+  }
+}

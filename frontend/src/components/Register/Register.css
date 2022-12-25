@@ -1,0 +1,51 @@
+.inputs{
+    box-sizing: border-box;
+    padding: 1vmax 2vmax;
+    width: 100%;
+
+    border: 2px solid #082c34;
+margin-top: 1vmax;
+    font: 100 1.2rem "Roboto", sans-serif;
+    outline: none;
+}
+.inputs:focus{
+    border-color: #28e4dc;
+
+}
+form > input[type="file"].imageInputs::-webkit-file-upload-button {
+    background-color: #082c34;
+
+    color: white;
+    width: 100%;
+    margin-right: 3rem;
+    padding: 1vmax;
+    border-radius: 30px;
+border: none;
+    font: 100 1.2rem "Lato", sans-serif;
+}
+form > input[type="file"].imageInputs {
+
+    border-radius: 30px;
+    margin: 2vmax;
+    margin-left: 6.3rem;
+
+  }
+
+  .registerBg{
+    background-image: url("https://img.freepik.com/free-vector/diverse-students-with-books-classmates-studying_107791-13477.jpg?size=626&ext=jpg&ga=GA1.2.384973956.1661681986&semt=sph");
+background-repeat: no-repeat;
+background-position: center;
+height: 100%;
+width: 1500px;
+background-size: cover;
+  }
+
+@media screen and (max-width: 600px){
+   .registerBg{width: 100%;
+height: 100%;
+
+}
+.avatarIcon{
+    margin-left: 2rem;
+}
+}

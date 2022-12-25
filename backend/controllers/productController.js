@@ -5,9 +5,9 @@ const cloudinary=require("cloudinary")
 exports.postItem=async(req,res)=>{
     try {
         
-        // const myCloud=await cloudinary.v2.uploader.upload(req.body.image,{
-        //   folder:"products"
-        // })
+        const myCloud=await cloudinary.v2.uploader.upload(req.body.image,{
+          folder:"products"
+        })
         
   
   
@@ -15,10 +15,11 @@ exports.postItem=async(req,res)=>{
           title:req.body.title,
           description: req.body.description,
           price:req.body.price,
-        //   imageUrl:{
-        //     public_id:myCloud.public_id,
-        //     url:myCloud.secure_url,
-        //   },
+          imageUrl:{
+            public_id:myCloud.public_id,
+            url:myCloud.secure_url,
+          },
+          location:req.body.location,
           soldStatus:false,
           owner: req.user._id,
         };
@@ -73,12 +74,45 @@ allUnsoldItems,
 
 exports.purchaseItem=async(req,res)=>{
     try {
-const item=await Product.findById(req.params._id)
+const item=await Product.findById(req.params.id)
 
+const buyer=await User.findById(req.user.id)
+
+item.soldStatus=true;
+item.owner=buyer._id;
+buyer.purchasedItems.push(item)
+
+await buyer.save()
+await item.save()
+res.status(200).json({
+  success: true,
+  message: "Item Bought",
+});
     } catch (error) {
+      console.log(error)
         res.status(500).json({
             success: false,
             message: error.message,
           });
     }
+}
+
+exports.getItem=async(req,res)=>{
+    try {
+        
+        const item = await Product.findById(req.params.id).populate("owner")
+
+    
+        res.status(200).json({
+          success: true,
+          item
+        });
+        
+      } catch (error) {
+        console.log(error)
+        res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+      }
 }

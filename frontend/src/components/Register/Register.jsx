@@ -20,7 +20,7 @@ const Register = () => {
             darker: '#053e85',
           },
           neutral: {
-            main: '#087cfc',
+            main: '#082c34',
             contrastText: '#fff',
           },
         },
@@ -55,16 +55,19 @@ else{
 
     const paperStyle={padding:20,height:'100%',width:450,margin:"20px auto"}
     return (
-        <Grid>
+       <div className="registerBg">
+         <Grid>
         <Paper elevation={10} style={paperStyle}>
-            <Typography variant='h2' sx={{fontFamily:"Roboto"}} mt={2} mb={4} ml={16}>Sign Up</Typography>
+            <Typography variant='h2' sx={{fontFamily:"Lato"}} mt={2} mb={4} ml={16}>Sign Up</Typography>
         <Grid>
         <form onSubmit={loginHandler}>
+        <div className="avatarIcon">
         <Avatar
 src={avatar}
 alt="User"
 sx={{ height: "10vmax", width: "10vmax", marginLeft:"10rem" }}
 />
+        </div>
         <input  className='imageInputs' type="file" accept="image/*" onChange={handleImageChange} />
 
 
@@ -100,7 +103,7 @@ sx={{ height: "10vmax", width: "10vmax", marginLeft:"10rem" }}
       
     />
 <ThemeProvider theme={theme}><Button color='neutral' variant="contained" fullWidth type='submit'
-sx={{marginTop:"20px"}}
+sx={{marginTop:"20px",borderRadius:"20px"}}
 >Register</Button></ThemeProvider>
         </form>
         </Grid>
@@ -111,6 +114,7 @@ sx={{marginTop:"20px"}}
         </Paper>
        
     </Grid>
+       </div>
     )
 }
 

@@ -23,7 +23,7 @@ export const getAllUnsoldItems=()=>async(dispatch)=>{
     }
 }
 
-export const postItem=(title,price,description)=>async(dispatch)=>{
+export const postItem=(title,price,description,image,location)=>async(dispatch)=>{
     try {
         dispatch({
           type: "postProductRequest",
@@ -35,6 +35,8 @@ export const postItem=(title,price,description)=>async(dispatch)=>{
             title,
             price,
             description,
+            image,
+            location
           },
           {
             headers: {
@@ -54,4 +56,50 @@ export const postItem=(title,price,description)=>async(dispatch)=>{
         })
         
       }
+}
+
+export const getItem=(id)=>async(dispatch)=>{
+  try {
+  
+    dispatch({
+        type:"getItemRequest"
+    })
+
+    const {data}=await axios.get(`/api/item/${id}`)
+    
+    dispatch({
+        type:"getItemSuccess",
+        payload:data.item,
+    })
+    
+} catch (error) {
+
+    dispatch({
+        type:"getItemFailure",
+        payload: error.response.data.message,
+    })
+}
+}
+
+export const purchaseItem=(id)=>async(dispatch)=>{
+  try {
+  
+    dispatch({
+        type:"purchaseProductRequest"
+    })
+
+    const {data}=await axios.get(`/api/item/buy/${id}`)
+    
+    dispatch({
+        type:"purchaseProductSuccess",
+        payload:data.item,
+    })
+    
+} catch (error) {
+
+    dispatch({
+        type:"purchaseProductFailure",
+        payload: error.response.data.message,
+    })
+}
 }
