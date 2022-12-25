@@ -31,6 +31,7 @@ Clone this project using the following commands
 ```
 To install the dependencies run
 ```bash
+cd frontend
 yarn
 ```
 Start the server using 
